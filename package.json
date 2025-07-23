@@ -1,0 +1,29 @@
+{
+  "name": "region-fold-extension",
+  "displayName": "Region Fold",
+  "description": "Fold code between // region and // endregion markers, with green highlighting.",
+  "version": "0.0.2",
+  "icon": "./img/region-fold-extension.png",
+  "galleryBanner": {
+    "color": "#4CAF50"
+  },
+  "publisher": "your-name",
+  "engines": {
+    "vscode": "^1.50.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["*"],
+  "main": "./out/extension.js",
+  "contributes": {},
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.3",
+    "vscode": "^1.1.37",
+    "@types/node": "^14.14.6",
+    "@types/vscode": "^1.50.0"
+  }
+}
