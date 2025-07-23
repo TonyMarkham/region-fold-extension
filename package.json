@@ -3,6 +3,7 @@
   "displayName": "Region Fold",
   "description": "Fold code between // region and // endregion markers, with customizable marker highlighting.",
   "version": "0.0.3",
+  "publisher": "OnlineEntity",
   "icon": "./img/region-fold-extension-512.png",
   "galleryBanner": {
     "color": "#4CAF50"
