@@ -2,3 +2,5 @@ node_modules
 .vscode
 out/test
 .git
+
+./img/region-fold-extension-1024.png
