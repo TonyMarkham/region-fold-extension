@@ -1,69 +1,81 @@
 # Region Fold
 
-**Region Fold** is a Visual Studio Code extension that provides:
+![Version](https://img.shields.io/badge/version-0.0.3-green) ![VSCode](https://img.shields.io/badge/VS%20Code-%5E1.50.0-blue)
 
-* **Code folding** for custom region markers (`// region` / `// endregion`) in any file.
-* **Green syntax highlighting** on the marker lines to make regions easy to spot at a glance.
+**Region Fold** enables custom code region folding and highlighting in **any** file type.
 
 ---
 
 ## Features
 
-* Fold and unfold any block wrapped between `// region` and `// endregion` using the gutter icons or built‑in VS Code commands.
-* Highlights both `// region` and `// endregion` lines in green for better visibility.
-* Works in **all** file types (no language-specific configuration needed).
+- 📑 **Custom Folding**: Collapse or expand any block wrapped between `// region` and `// endregion`.
+- 🎨 **Configurable Highlighting**: Lines with region markers are highlighted (default: green).
+- ⬆️ **Fold ↑ Command**: A **CodeLens** appears above each `// endregion` for one-click folding.
 
-## Requirements
-
-* Visual Studio Code **1.50.0** or later.
-* No additional dependencies.
+---
 
 ## Installation
 
-1. From the **Extensions** view (`Ctrl+Shift+X` / `⌘+Shift+X`), search for **Region Fold** and install.
-2. Or install from a VSIX file:
+1. Open the **Extensions** panel (`Ctrl+Shift+X` / `⌘+Shift+X`).
+2. Search for **Region Fold** and click **Install**.
 
-   ```bash
-   code --install-extension region-fold-extension-0.0.2.vsix
-   ```
+Or install manually:
+
+```bash
+npm install -g vsce
+vsce package
+code --install-extension region-fold-extension-0.0.3.vsix
+```
+
+---
 
 ## Usage
 
-1. Insert custom region comments in your code:
-
+1. Add region markers in your code:
    ```js
-   // region My Section
-   // ... your code here ...
+   // region MySection
+   // ... code ...
    // endregion
    ```
-2. Click the folding arrow in the gutter next to `// region` to collapse or expand the block.
-3. You can also use commands:
+2. Click the folding arrow (▾/▸) beside `// region` or the **Fold ↑** link above `// endregion`.
+3. Use keyboard shortcuts:
+   - **Fold**: `Ctrl+Shift+[` / `⌘+Option+[`
+   - **Unfold**: `Ctrl+Shift+]` / `⌘+Option+]`
+   - **Fold All**: `Ctrl+K Ctrl+0`
+   - **Unfold All**: `Ctrl+K Ctrl+J`
 
-   * **Fold**: `Ctrl+Shift+[` / `⌘+Option+[`
-   * **Unfold**: `Ctrl+Shift+]` / `⌘+Option+]`
-   * **Fold All**: `Ctrl+K Ctrl+0`
-   * **Unfold All**: `Ctrl+K Ctrl+J`
+---
 
-## Extension Settings
+## Configuration
 
-This release has no custom settings yet, but future versions may allow you to configure:
+Customize in **Settings** (`Ctrl+,` / `⌘+,`) under **Extensions → Region Fold**:
 
-* Marker keywords (e.g. `# region` / `# endregion`)
-* Highlight color
+| Setting                  | Type   | Default | Description                            |
+|--------------------------|--------|---------|----------------------------------------|
+| `regionFold.markerColor` | string | `green` | CSS color for region marker highlighting |
+
+---
+
+## Commands
+
+Run via **Command Palette** (`Ctrl+Shift+P` / `⌘+Shift+P`):
+
+- **Region Fold: Fold Up Region** (`regionFold.foldUp`) — instantly collapse the surrounding region.
+
+---
 
 ## Contributing
 
-1. Fork the repository.
-2. Clone your fork and run:
-
-   ```bash
-   npm install
-   npm run compile
-   ```
-3. Make your changes in `src/extension.ts`.
-4. Run the extension in VS Code via the **Run Extension** debug profile.
+1. Fork and clone: `git clone https://github.com/your-name/region-fold-extension.git`
+2. Install: `npm install`
+3. Compile: `npm run compile`
+4. Launch in VS Code: press **F5** to start the Extension Development Host.
 5. Submit a pull request.
+
+---
 
 ## License
 
 MIT © Your Name
+
+*Happy folding!*
