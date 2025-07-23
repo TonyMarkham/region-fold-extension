@@ -1,20 +1,37 @@
 {
   "name": "region-fold-extension",
   "displayName": "Region Fold",
-  "description": "Fold code between // region and // endregion markers, with green highlighting.",
-  "version": "0.0.2",
+  "description": "Fold code between // region and // endregion markers, with customizable marker highlighting.",
+  "version": "0.0.3",
   "icon": "./img/region-fold-extension-512.png",
   "galleryBanner": {
     "color": "#4CAF50"
   },
-  "publisher": "OnlineEntity",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TonyMarkham/region-fold-extension"
+  },
   "engines": {
     "vscode": "^1.50.0"
   },
   "categories": ["Other"],
   "activationEvents": ["*"],
   "main": "./out/extension.js",
-  "contributes": {},
+  "contributes": {
+    "configuration": {
+      "title": "Region Fold",
+      "properties": {
+        "regionFold.markerColor": {
+          "type": "string",
+          "default": "green",
+          "description": "Color used to highlight region marker lines. Accepts any valid CSS color string."
+        }
+      }
+    },
+    "galleryBanner": {
+      "color": "#4CAF50"
+    }
+  },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
@@ -25,9 +42,5 @@
     "vscode": "^1.1.37",
     "@types/node": "^14.14.6",
     "@types/vscode": "^1.50.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/TonyMarkham/region-fold-extension"
   }
 }
